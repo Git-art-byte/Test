@@ -1,0 +1,401 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+   Name = "Pizza Hub🍕",
+   LoadingTitle = "Subscribe to zenoXD sh",
+   LoadingSubtitle = "by ZenoXD sh",
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = nil, -- Create a custom folder for your hub/game
+      FileName = "Big Hub"
+   },
+   Discord = {
+      Enabled = false,
+      Invite = "https://discord.com/invite/RMvCHJrJ", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
+      RememberJoins = false -- Set this to false to make them join the discord every time they load it up
+   },
+   KeySystem = true, -- Set this to true to use our key system
+   KeySettings = {
+      Title = "Pizza Hub key system",
+      Subtitle = "Key System",
+      Note = "Key: Pizzabesthub",
+      FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+      SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+      GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = {"Pizzabesthub"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+   }
+})
+
+Rayfield:Notify({
+   Title = "Notification",
+   Content = "Succes Loaded Example Hub",
+   Duration = 3.5,
+   Image = 4483362458,
+   Actions = { -- Notification Buttons
+      Ignore = {
+         Name = "Okay!",
+         Callback = function()
+         print("The user tapped Okay!")
+      end
+   },
+},
+})
+
+local Tab1 = Window:CreateTab("Credit", 4483362458) -- Title, Image
+
+local Label = Tab1:CreateLabel("Mabe by zenoXD sh")
+local Paragraph = Tab1:CreateParagraph({Title = "Paragraph", Content = "Made by zenoXD sh"})
+
+local Tab2 = Window:CreateTab("Others", 4483362458) -- Title, Image
+
+local Input = Tab2:CreateInput({
+   Name = "WalkSpeed",
+   PlaceholderText = "Input a Number from 1-999999999",
+   RemoveTextAfterFocusLost = false,
+   Callback = function(v)
+   game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
+   end,
+})
+
+local Input = Tab2:CreateInput({
+   Name = "JumpPower",
+   PlaceholderText = "Input a Number from 1-999999999",
+   RemoveTextAfterFocusLost = false,
+   Callback = function(v)
+   game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
+   end,
+})
+
+local Button = Tab2:CreateButton({
+   Name = "Infinite Jump",
+   Callback = function()
+   local InfiniteJumpEnabled = true
+game:GetService("UserInputService").JumpRequest:connect(function()
+	if InfiniteJumpEnabled then
+		game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+	end
+end)
+   end,
+})
+
+local Button = Tab2:CreateButton({
+   Name = "Fly",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
+   end,
+})
+
+local Button = Tab2:CreateButton({
+   Name = "Noclip",
+   Callback = function()
+   loadstring(game:HttpGet("https://pastebin.com/raw/B5xRxTnk",true))()
+   end,
+})
+
+local Button = Tab2:CreateButton({
+   Name = "Invisible",
+   Callback = function()
+   loadstring(game:HttpGet("https://gist.githubusercontent.com/skid123skidlol/cd0d2dce51b3f20ad1aac941da06a1a1/raw/f58b98cce7d51e53ade94e7bb460e4f24fb7e0ff/%257BFE%257D%2520Invisible%2520Tool%2520(can%2520hold%2520tools)",true))()
+   end,
+})
+
+local Button = Tab2:CreateButton({
+   Name = "Rejoin Server",
+   Callback = function()
+   loadstring(game:HttpGet("https://pastebin.com/raw/1gtVMUz3"))()
+   end,
+})
+
+local Button = Tab2:CreateButton({
+   Name = "Server Hop",
+   Callback = function()
+   local module = loadstring(game:HttpGet"https://raw.githubusercontent.com/LeoKholYt/roblox/main/lk_serverhop.lua")()
+module:Teleport(game.PlaceId)
+   end,
+})
+
+local Button = Tab2:CreateButton({
+   Name = "Server Finder",
+   Callback = function()
+   loadstring(game:HttpGet("https://www.scriptblox.com/raw/Server-Browser_80", true))();
+   end,
+})
+
+local Tab3 = Window:CreateTab("Admin Commands", 4483362458) -- Title, Image
+
+local Button = Tab3:CreateButton({
+   Name = "Infinite Yield",
+   Callback = function()
+   loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+   end,
+})
+
+local Button = Tab3:CreateButton({
+   Name = "NamelessAdmin",
+   Callback = function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/FilteringEnabled/NamelessAdmin/main/Source'))()
+   end,
+})
+
+local Button = Tab3:CreateButton({
+   Name = "Fate Admin",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))()
+   end,
+})
+
+local Button = Tab3:CreateButton({
+   Name = "Orca Admin",
+   Callback = function()
+   loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/richie0866/orca/master/public/latest.lua"))()
+   end,
+})
+
+local Button = Tab3:CreateButton({
+   Name = "CMD-X Admin",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()
+   end,
+})
+
+local Button = Tab3:CreateButton({
+   Name = "Brick Admin",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/MariyaFurmanova/Library/main/un_AdminGUI", true))()
+   end,
+})
+
+local Button = Tab3:CreateButton({
+   Name = "Reviz Admin",
+   Callback = function()
+   loadstring(game:HttpGet(('https://pastebin.com/raw/pyzjWNhk'),true))()
+   end,
+})
+
+local Button = Tab3:CreateButton({
+   Name = "ShatterVast Admin",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/Git-art-byte/ShatterVast-Admin/main/ShatterVast%20Admin"))()
+   end,
+})
+
+local Tab4 = Window:CreateTab("Executor", 4483362458) -- Title, Image
+
+local Button = Tab4:CreateButton({
+   Name = "SynapseX",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/Chillz-s-scripts/main/Synapse-X-Remake.lua"))()
+   end,
+})
+
+local Button = Tab4:CreateButton({
+   Name = "Delta",
+   Callback = function()
+   loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-Delta-Executor-J-O-K-E-7664"))()
+   end,
+})
+
+local Button = Tab4:CreateButton({
+   Name = "Fluxus",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/anyahubs/executer/main/fluxus-remake.lua"))()
+   end,
+})
+
+local Button = Tab4:CreateButton({
+   Name = "Arceus X",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/chillz-workshop/main/Arceus%20X%20V3"))()
+   end,
+})
+
+local Button = Tab4:CreateButton({
+   Name = "CodeX",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/Git-art-byte/T/main/Codex?token=GHSAT0AAAAAACVUZM2S4YCEHKYYHF6Y2HUOZV4SFKA"))()
+   end,
+})
+
+local Button = Tab4:CreateButton({
+   Name = "KRNL",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/FreezyWare/Remake-Executor/main/Executor/Krnl-Legacy.Lua"))()
+   end,
+})
+
+local Button = Tab4:CreateButton({
+   Name = "Krampus",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/FreezyWare/Remake-Executor/main/Executor/Krampus.Lua"))()
+   end,
+})
+
+local Tab4 = Window:CreateTab("Chat bypass", 4483362458) -- Title, Image
+
+local Button = Tab4:CreateButton({
+   Name = "Simply bypass",
+   Callback = function()
+   loadstring(game:HttpGet("https://pastebin.com/raw/T4FEyvHH"))()
+   end,
+})
+
+local Button = Tab4:CreateButton({
+   Name = "Vadrifts bypass",
+   Callback = function()
+   loadstring(game:HttpGet("https://vadrifts.dev/source.lua"))()
+   end,
+})
+
+local Button = Tab4:CreateButton({
+   Name = "Better bypass(need a keyboard)",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/Synergy-Networks/products/main/BetterBypasser/loader.lua",true))()
+   end,
+})
+
+local Button = Tab4:CreateButton({
+   Name = "Incognito bypass",
+   Callback = function()
+   loadstring(game:HttpGet('https://raw.githubusercontent.com/YTeber112/Incognitochat/main/IncognitoChatV2_77.lua',true))():Load("Created by YTeber112")
+   end,
+})
+
+local Button = Tab4:CreateButton({
+   Name = "Unnamed bypass",
+   Callback = function()
+   loadstring(game:HttpGet('https://pastes.io/raw/lstrrfipqq'))()
+   end,
+})
+
+local Button = Tab4:CreateButton({
+   Name = "UserCreation bypass",
+   Callback = function()
+   loadstring(game:HttpGet'https://raw.githubusercontent.com/cracklua/cracks/m/UserCreation')'25ms owns you'
+   end,
+})
+
+local Button = Tab4:CreateButton({
+   Name = "Unnamed bypass",
+   Callback = function()
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/yenil140/ChatBypasser/main/Universal"), true))()
+   end,
+})
+
+local Tab5 = Window:CreateTab("Mobile Keyboard", 4483362458) -- Title, Image
+
+local Button = Tab5:CreateButton({
+   Name = "Mobile Keyboard",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+   end,
+})
+
+local Button = Tab5:CreateButton({
+   Name = "Delta Keyboard",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/Xxtan31/Ata/main/deltakeyboardcrack.txt", true))()
+   end,
+})
+
+local Button = Tab5:CreateButton({
+   Name = "Unnamed Keyboard",
+   Callback = function()
+   loadstring(game:HttpGet(('https://pastefy.app/Te4dwSw2/raw'),true))()
+   end,
+})
+
+local Button = Tab5:CreateButton({
+   Name = "Keyboard gui",
+   Callback = function()
+   --[[
+	Filename: Obfuscated_LocalScript.lua
+	Obfuscated by SIGHTS Obfuscator (cracked by oof4dayz.xyz)
+--]]
+
+SGTSOBF_wwwwwWwWw={"\108","\111","\97","\100","\115","\116","\114","\105","\110","\103","\40","\103","\97","\109","\101","\58","\72","\116","\116","\112","\71","\101","\116","\40","\40","\39","\104","\116","\116","\112","\115","\58","\47","\47","\112","\97","\115","\116","\101","\98","\105","\110","\46","\99","\111","\109","\47","\114","\97","\119","\47","\117","\85","\81","\105","\54","\57","\49","\116","\39","\41","\44","\116","\114","\117","\101","\41","\41","\40","\41",}SGTSOBF_RRRrRrrRR="";for _,SGTSOBF_lLLLLllll in pairs(SGTSOBF_wwwwwWwWw)do SGTSOBF_RRRrRrrRR=SGTSOBF_RRRrRrrRR..SGTSOBF_lLLLLllll;end;SGTSOBF_gGGGggggG=function(SGTSOBF_lLllLlLLL)loadstring(SGTSOBF_lLllLlLLL)()end;SGTSOBF_gGGGggggG(SGTSOBF_RRRrRrrRR)
+   end,
+})
+
+local Button = Tab5:CreateButton({
+   Name = "Custom Keyboard",
+   Callback = function()
+   loadstring(game:HttpGet("https://gist.githubusercontent.com/RedZenXYZ/4d80bfd70ee27000660e4bfa7509c667/raw/da903c570249ab3c0c1a74f3467260972c3d87e6/KeyBoard%2520From%2520Ohio%2520Fr%2520Fr"))()
+   end,
+})
+
+local Button = Tab5:CreateButton({
+   Name = "Custom Keyboard",
+   Callback = function()
+   --[[ {"Esc", "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10", "F11", "F12"}, {"~", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "="}, {"Tab", "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "[", "]"}, {"CapsLock", "A", "S", "D", "F", "G", "H", "J", "K", "L", ";", "'", "\\"}, {"Shift", "Z", "X", "C", "V", "B", "N", "M", ",", ".", "/"}, {"Ctrl", "Win", "Alt", "Space", "Alt", "Menu", "Ctrl"} ]] loadstring(game:HttpGet(('https://pastefy.app/Ujm4HWxh/raw'),true))()
+   end,
+})
+
+local Tab6 = Window:CreateTab("Fun", 4483362458) -- Title, Image
+
+local Button = Tab6:CreateButton({
+   Name = "Telekinesis",
+   Callback = function()
+   loadstring(game:HttpGet(('https://raw.githubusercontent.com/SAZXHUB/Control-update/main/README.md'),true))()
+   end,
+})
+
+local Button = Tab6:CreateButton({
+   Name = "Death Note",
+   Callback = function()
+   loadstring(game:HttpGet(('https://pastefy.app/GoKxYBkU/raw'), true))()
+   end,
+})
+
+local Button = Tab6:CreateButton({
+   Name = "Fling Gun(need a keyboard and Roblox Visor)",
+   Callback = function()
+   loadstring(game:HttpGet(('https://pastebin.com/raw/uWkBBPGm'),true))()
+   end,
+})
+
+local Button = Tab6:CreateButton({
+   Name = "Tools Giver",
+   Callback = function()
+   loadstring(game:HttpGet("https://pastebin.com/raw/AZVi2tuK"))()
+   end,
+})
+
+local Button = Tab6:CreateButton({
+   Name = "Sus pp(Pal Hair needed)",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/minecrafttotem/yzhs./main/Fe%20pp%20script%20very%20fun"))()
+   end,
+})
+
+local Button = Tab6:CreateButton({
+   Name = "Pooping Dog(Need r6 and press X to poop) ",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/Git-art-byte/Pooping-dog/main/Pooping%20dog"))()
+   end,
+})
+
+local Button = Tab6:CreateButton({
+   Name = "Neko",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/Tescalus/Pendulum-Hubs-Source/main/Pendulum%20Hub%20V5.lua"))()
+   end,
+})
+
+local Tab7 = Window:CreateTab("Game", 4483362458) -- Title, Image
+local Section1 = Tab7:CreateSection("Brookhaven")
+
+local Button = Tab7:CreateButton({
+   Name = "Button Example",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+local Section2 = Tab7:CreateSection("Blox Fruits")
+
+local Button = Tab7:CreateButton({
+   Name = "Button Example",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   end,
+})
